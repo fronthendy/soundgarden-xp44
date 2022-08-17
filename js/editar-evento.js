@@ -17,6 +17,20 @@ const exibirDetalhesEvento = async () => {
         }).then((response) => response.json());
 
     console.log(dadosEvento);
+
+    const inputNome = document.getElementById("nome");
+    const inputAtracoes = document.getElementById("atracoes");
+    const inputDescricao = document.getElementById("descricao");
+    const inputData = document.getElementById("data");
+    const inputLotacao = document.getElementById("lotacao");
+    const inputBanner = document.getElementById("banner");
+
+    inputNome.value = dadosEvento.name;
+    inputAtracoes.value = dadosEvento.attractions.join(', ');
+    inputBanner.value = dadosEvento.poster;
+    inputDescricao.value = dadosEvento.description;
+    inputData.value = dadosEvento.scheduled;
+    inputLotacao.value = dadosEvento.number_tickets;
 }
 
 exibirDetalhesEvento();
