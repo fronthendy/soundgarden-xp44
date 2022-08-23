@@ -21,10 +21,14 @@ const listarEventos = async () => {
     let htmlEventos = "";
 
     eventos.forEach(evento => {
+        let dia = evento.scheduled.slice(8, 10);
+        let mes = evento.scheduled.slice(5, 7);
+        let ano = evento.scheduled.slice(0, 4);
+
         htmlEventos += `
             <tr>
                 <th scope="row">#</th>
-                <td>${evento.scheduled}</td>
+                <td>${dia}/${mes}/${ano}</td>
                 <td>${evento.name}</td>
                 <td>${evento.attractions.join(', ')}</td>
                 <td>
